@@ -1,0 +1,26 @@
+<div [hidden]="deleted">
+<div *ngIf="'primary'==layoutService.getActiveView()">
+  {{title}}
+  <button >Clone</button>
+  <button (click)="layoutService.showSecondaryView()">Manage</button>
+  <button (click)="layoutService.minimize()" *ngIf="!layoutService.isMinimized()">Minimize</button>
+  <button (click)="layoutService.maximize()" *ngIf="layoutService.isMinimized()">Maximize</button>
+  <button (click)="deleted=true">Delete</button>
+  
+</div>
+<div [hidden]="layoutService.isMinimized() || 'secondary'==layoutService.getActiveView()">
+    Primary
+    <ng-template #primary></ng-template>
+</div>
+<div *ngIf="'secondary'==layoutService.getActiveView()">
+    {{title}}
+    <button (click)="layoutService.showPrimaryView()">Close</button>
+</div>
+<div [hidden]="'primary'==layoutService.getActiveView()">
+    Secondary
+    <ng-template #secondary></ng-template>
+</div>
+</div>
+
+
+

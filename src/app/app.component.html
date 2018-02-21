@@ -1,0 +1,15 @@
+<h1>Widget</h1>
+<widget-wrapper widgetId="12345" title="Test Widget" widget="DecoratedComponentComponent" [widgetModel]="testModel" (widgetModelChange)="onModelChange()">
+</widget-wrapper>
+<hr/>
+<h1>primary</h1>
+<app-decorated-component [model]="testModel"></app-decorated-component>
+<hr/>
+<h1>secondary</h1>
+<app-settings-view [model]="testModel"></app-settings-view>
+
+<hr/>
+
+<li *ngFor="let port of testModel.ports">
+    {{port}}
+</li>

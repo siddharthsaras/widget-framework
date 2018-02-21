@@ -1,0 +1,8 @@
+<ng-container *ngIf="model">
+    <li *ngFor="let port of model.ports">
+      {{port}}
+    </li>
+
+<input type ="text" [(ngModel)]="newPort"/>
+<button (click) = "onAdd(newPort)">Add</button>
+</ng-container>
